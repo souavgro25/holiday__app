@@ -3,14 +3,20 @@ import group from "../Images/Group 856.svg";
 import Button from "./Button";
 import Modal from "react-modal";
 import ModalForm from "./ModalForm";
+import {
+  PlusOutlined,
+  FilterOutlined,
+  DeleteOutlined,
+  EditOutlined,
+} from "@ant-design/icons";
 function Holiday() {
   const [data, setdata] = useState({ name: "", type: "", date: "" });
   const [tasks, settasks] = useState([
-    { name: "sourabh", type: "holiday", date: "12/2/4" },
+    { name: "rath yatra", type: "holiday", date: "12/2/4" },
 
-    { name: "sourab", type: "holiday", date: "12/2/4" },
+    { name: "rath yatra", type: "holiday", date: "12/2/4" },
 
-    { name: "sourav", type: "holiday", date: "12/2/4" },
+    { name: "rath yatra", type: "holiday", date: "12/2/4" },
   ]);
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
@@ -27,6 +33,7 @@ function Holiday() {
   function add() {
     console.log(tasks, data);
     settasks([...tasks, data]);
+    setIsOpen(false);
   }
   const customStyles = {
     content: {
@@ -49,9 +56,9 @@ function Holiday() {
         <Modal />
       </Modal>
       <div className="row-span-2 col-span-1 pt-20 ">
-        <Button name="holidays" selected={false} />
+        <Button name="General" selected={false} />
         <Button name="holidays" selected={true} />
-        <Button name="holidays" selected={false} />
+        <Button name="Leave" selected={false} />
       </div>
 
       <div className="grid gap-y-10 row-span-2 col-span-5 pl-10 border-l ">
@@ -74,15 +81,26 @@ function Holiday() {
 
         <div className="flex flex-col  gap-y-10">
           <div className="flex justify-between">
-            <h1>List(6)</h1>
+            <h1>List({tasks.length})</h1>
             <div className="flex  gap-x-5">
-              <p onClick={openModal} className="text-yellow-400 text-sm">
-                Add New
-              </p>
-              <p className="text-gray-400 font-normal text-xs">
-                filter{" "}
-                <span className="text-black font-normal text-sm">All</span>
-              </p>
+              <div className="flex gap-2">
+                <PlusOutlined className=" cursor-pointer text-yellow-400 text-xs" />
+                <p
+                  onClick={openModal}
+                  className=" cursor-pointer text-yellow-400 text-xs"
+                >
+                  Add New
+                </p>
+              </div>
+              <div className="flex gap-x-2">
+                <FilterOutlined className="text-gray-400 font-normal text-xs" />
+                <p className="text-gray-400 font-normal text-xs">
+                  filter
+                  <span className="text-black ml-2 font-normal text-xs">
+                    All
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
           <table className="table-fixed">
@@ -106,10 +124,10 @@ function Holiday() {
                   <td className="text-xs py-3">{arr.type}</td>
                   <td className="text-xs py-3">{arr.date}</td>
                   <td className="text-gray-400 text-xs font-normal px-5">
-                    Delete
+                    <DeleteOutlined />
                   </td>
                   <td className="text-gray-400 text-xs font-normal px-5">
-                    Edit
+                    <EditOutlined />
                   </td>
                 </tr>
               ))}

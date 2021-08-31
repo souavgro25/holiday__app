@@ -3,6 +3,7 @@ import group2 from "../Images/Group 620.svg";
 import group3 from "../Images/Group 622.svg";
 import group4 from "../Images/Group 646.svg";
 import path from "../Images/Path1974.svg";
+
 function Sidebar() {
   return (
     <div className="flex flex-col items-center mt-12 gap-y-20  px-8  fixed h-screen bg-gray-100   ">

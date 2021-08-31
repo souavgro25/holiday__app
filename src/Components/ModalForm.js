@@ -46,12 +46,16 @@ function ModalForm({ handler, add, closeModal }) {
                 type
               </label>
               <br />
-              <input
-                className=" border-b  text-sm outline-none font-medium  focus:border-blue-400  "
-                type="text"
+              <select
+                className=" border-b text-sm outline-none font-medium focus:border-blue-400 pr-16  "
                 name="type"
                 onChange={handler}
-              />
+              >
+                <option value="Holiday">holiday</option>
+                <option value="Leave">Leave</option>
+                <option value="National Holiday">national holiday</option>
+                <option value="Cultural Holiday">cultural holiday</option>
+              </select>
             </div>
           </form>
         </div>
