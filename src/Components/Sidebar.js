@@ -5,7 +5,7 @@ import group4 from "../Images/Group 646.svg";
 import path from "../Images/Path1974.svg"
 function Sidebar() {
     return (
-        <div className="flex flex-col gap-y-20 items-center px-10 fixed h-screen bg-gray-100 pt-12  ">
+        <div className="flex flex-col items-center mt-12 gap-y-20  px-8  fixed h-screen bg-gray-100   ">
             <div>
                 <img className="h-3" src={group4} alt="" />
             </div>
