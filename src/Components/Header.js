@@ -5,7 +5,7 @@ import layer3 from "../Images/Layer3.svg"
 import group from "../Images/Group 815.svg"
 function Header() {
     return (
-        <div className="flex justify-between items-center mx-10 py-5 bg-gray-100">
+        <div className="flex justify-between items-center pl-20 mx-10 py-5 flex-1 bg-gray-100">
             <div className="flex gap-x-2">
                 <img src={settings} alt="" />
                 <p className="font-bold">Settings</p>
